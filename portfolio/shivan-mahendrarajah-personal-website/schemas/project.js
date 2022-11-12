@@ -4,7 +4,7 @@ export default {
     type: "document",
     fields: [
         {
-            name: "BOJANGLES",
+            name: "title",
             type: "string",
         },
         {
