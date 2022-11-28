@@ -1,10 +1,10 @@
 export default {
-    name: "travelogue",
-    title: "Travelogue",
+    name: "publications",
+    title: "Publications",
     type: "document",
     fields: [
         {
-            name: "title",
+            name: "Book_Title",
             type: "string",
         }, 
         {
@@ -12,13 +12,9 @@ export default {
             type: "image",
         },
         {
-            name: "date",
+            name: "date_published",
             type: "datetime",
         },
-        {
-            name: "place",
-            type: "string"
-        } ,
         {
             name: "post",
             type: "text",

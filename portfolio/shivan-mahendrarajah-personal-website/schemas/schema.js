@@ -10,6 +10,7 @@ import post from './post'
 import author from './author'
 import project from './project'
 import travelogue from './travelogue'
+import publications from './publications'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -19,9 +20,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    post,
-    author,
-    project,
+    publications,
     travelogue,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

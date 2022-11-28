@@ -6,6 +6,8 @@ import NavBar from "./components/NavBar";
 import Post from "./components/Post";
 import Project from "./components/Project";
 import SinglePost from "./components/SinglePost";
+import Travelogue from "./components/Travelogue";
+import Publications from "./components/Publications";
 function App() {
  return (
   <BrowserRouter>
@@ -15,7 +17,8 @@ function App() {
       <Route path="/about" element = {<About />}> </Route>
       <Route path="/post/:slug" element = {<SinglePost />}> </Route>
       <Route path="/post" element = {<Post />}> </Route>
-      <Route path="/project" element = {<Project />}> </Route>
+      <Route path="/publications" element = {<Publications />}> </Route>
+      <Route path="/travelogue" element={<Travelogue />}></Route>
     </Routes>
   </BrowserRouter>
  )
