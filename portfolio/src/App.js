@@ -8,6 +8,7 @@ import Project from "./components/Project";
 import SinglePost from "./components/SinglePost";
 import Travelogue from "./components/Travelogue";
 import Publications from "./components/Publications";
+import SingleTravelogue from "./components/SingleTravelogue";
 function App() {
  return (
   <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element = {<Home />} exact> </Route>
       <Route path="/about" element = {<About />}> </Route>
       <Route path="/post/:slug" element = {<SinglePost />}> </Route>
+      <Route path="/travelogue/:slug" element={<SingleTravelogue/>}></Route>
       <Route path="/post" element = {<Post />}> </Route>
       <Route path="/publications" element = {<Publications />}> </Route>
       <Route path="/travelogue" element={<Travelogue />}></Route>
