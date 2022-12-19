@@ -15,7 +15,7 @@ export default {
               source: 'title',
               maxLength: 97,
             },
-          },
+        },
         {
             name: "thumbnail",
             type: "image",

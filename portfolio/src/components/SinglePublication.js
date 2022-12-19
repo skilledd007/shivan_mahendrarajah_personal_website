@@ -2,20 +2,13 @@ import React from "react";
 import { useEffect,useState } from "react";
 import sanityClient from "../client.js";
 import { useParams } from "react-router-dom";
-import imageUrlBuilder from "@sanity/image-url";
-import BlockContent from "@sanity/block-content-to-react";
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-    return builder.image(source);
-}
 
-
-export default function SingleTravelogue() {
-    const[singleTravelogue, setSingleTravelogue] = useState(null);
+export default function SinglePublication() {
+    const[singlePublication, setSinglePublication] = useState(null);
     const{slug} = useParams();
     useEffect(() => {
         sanityClient.fetch(`*[slug.current == "${slug}"]{
-            title,
+            Book_Title,
             slug,
             thumbnail {
                 asset-> {
@@ -24,12 +17,11 @@ export default function SingleTravelogue() {
                 },
                 alt
             },
-            date,
-            place,
+            date_published,
             post,
-        }`).then((data) => setSingleTravelogue(data[0])).catch(console.error);
+        }`).then((data) => setSinglePublication(data[0])).catch(console.error);
     },[slug]);
-    if(!singleTravelogue) {
+    if(!singlePublication) {
         return <div> Loading ... </div>
     }
     return (
@@ -38,7 +30,7 @@ export default function SingleTravelogue() {
                 <header className="relative">
                     <div className="absolute h-full w-full flex items-center justify-center p-8">
                         <div>
-                            <h1 className="cursive text-3xl lg:text-6xl mb-4"> {singleTravelogue.title} </h1>
+                            <h1 className="cursive text-3xl lg:text-6xl mb-4"> {singlePublication.Book_Title} </h1>
                             <div> 
                                 <img /> 
                                 <p> </p>
@@ -47,12 +39,11 @@ export default function SingleTravelogue() {
                         </div>
 
                     </div>
-                    <img src={singleTravelogue.thumbnail.asset.url} alt={singleTravelogue.title} className="w-full object-cover rounded-t" style={{height: "200px"}}/>
+                    <img src={singlePublication.thumbnail.asset.url} alt={singlePublication.Book_Title} className="w-full object-cover rounded-t" style={{height: "200px"}}/>
                 </header>
                 <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full">
                     
-                        {singleTravelogue.post}
-                        <BlockContent blocks={singleTravelogue.place} projectId="8n8e60eu" dataset="production"/>
+                        {singlePublication.post}
                     
                 </div>
             </article>

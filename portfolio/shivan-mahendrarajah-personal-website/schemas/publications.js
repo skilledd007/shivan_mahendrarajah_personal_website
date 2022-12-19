@@ -8,6 +8,15 @@ export default {
             type: "string",
         }, 
         {
+            name: "slug",
+            title: "Unique Page URL",
+            type: "slug",
+            options: {
+              source: 'Book_Title',
+              maxLength: 97,
+            },
+        },
+        {
             name: "thumbnail",
             type: "image",
         },
