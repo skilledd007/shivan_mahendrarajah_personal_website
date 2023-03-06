@@ -25,8 +25,15 @@ export default {
             type: "datetime",
         },
         {
-            name: "post",
-            type: "text",
-        } ,
+            name: 'body',
+            title: 'Body',
+            type: 'array',
+            of: [ 
+                {
+                    type: 'block',
+                },
+            ],
+
+        }
     ]
 }

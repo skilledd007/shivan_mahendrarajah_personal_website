@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect,useState } from "react";
 import sanityClient from "../client.js";
 import { useParams } from "react-router-dom";
-
+import BlockContent from "@sanity/block-content-to-react";
 export default function SinglePublication() {
     const[singlePublication, setSinglePublication] = useState(null);
     const{slug} = useParams();
@@ -18,7 +18,7 @@ export default function SinglePublication() {
                 alt
             },
             date_published,
-            post,
+            body
         }`).then((data) => setSinglePublication(data[0])).catch(console.error);
     },[slug]);
     if(!singlePublication) {
@@ -43,7 +43,8 @@ export default function SinglePublication() {
                 </header>
                 <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full">
                     
-                        {singlePublication.post}
+                        <BlockContent blocks={singlePublication.body} />
+
                     
                 </div>
             </article>
