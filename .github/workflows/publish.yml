@@ -13,12 +13,13 @@ jobs:
       - name: git-checkout
         uses: actions/checkout@v2
 
+      
       - name: Install all dependencies
-        run: cd ./shivan_mahendrarajah_personal_website
-      - name: Install all dependencies
+        working-directory: shivan_mahendrarajah_personal_website/portfolio
         run: npm install
 
       - name: Build
+        working-directory: shivan_mahendrarajah_personal_website/portfolio
         run: npm run build # The build command of your project
 
       - name: Push
