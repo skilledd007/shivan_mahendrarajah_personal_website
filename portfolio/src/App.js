@@ -8,6 +8,8 @@ import Travelogue from "./components/Travelogue";
 import Publications from "./components/Publications";
 import SingleTravelogue from "./components/SingleTravelogue";
 import SinglePublication from "./components/SinglePublication";
+import Pictures from "./components/Pictures";
+import Podcasts from "./components/Podcasts";
 function App() {
  return (
   <BrowserRouter>
@@ -20,6 +22,8 @@ function App() {
       <Route path="/post" element = {<Post />}> </Route>
       <Route path="/publications" element = {<Publications />}> </Route>
       <Route path="/travelogue" element={<Travelogue />}></Route>
+      <Route path="/pictures" element={<Pictures />}> </Route>
+      <Route path ="/podcasts" element={<Podcasts /> }> </Route>
     </Routes>
   </BrowserRouter>
  )

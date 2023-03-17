@@ -15,6 +15,11 @@ export default function NavBar() {
                 activeClassName="text-red-100 bg-red-700">  About Me </NavLink>
                 <NavLink to = "/travelogue" className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
                 activeClassName="text-red-100 bg-red-700">  Travelogue </NavLink>
+                <NavLink to = "/pictures" className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
+                activeClassName="text-red-100 bg-red-700">  Pictures </NavLink>
+                <NavLink to = "/podcasts" className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
+                activeClassName="text-red-100 bg-red-700">  Podcasts </NavLink>
+
             </nav>
             <div className="inline-flex py-3 px-3 my-6">
                 <SocialIcon url = "twitter.com" className="mr-4" target="_blank" fgColor = "#fff" style={{height: 35, width: 35}}/>

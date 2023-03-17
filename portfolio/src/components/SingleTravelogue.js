@@ -26,7 +26,7 @@ export default function SingleTravelogue() {
             },
             date,
             place,
-            post,
+            body,
         }`).then((data) => setSingleTravelogue(data[0])).catch(console.error);
     },[slug]);
     if(!singleTravelogue) {
@@ -51,8 +51,7 @@ export default function SingleTravelogue() {
                 </header>
                 <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full">
                     
-                        {singleTravelogue.post}
-                        <BlockContent blocks={singleTravelogue.place} projectId="8n8e60eu" dataset="production"/>
+                        <BlockContent blocks={singleTravelogue.body} />
                     
                 </div>
             </article>
