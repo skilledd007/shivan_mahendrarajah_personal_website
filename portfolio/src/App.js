@@ -10,6 +10,7 @@ import SingleTravelogue from "./components/SingleTravelogue";
 import SinglePublication from "./components/SinglePublication";
 import Pictures from "./components/Pictures";
 import Podcasts from "./components/Podcasts";
+
 function App() {
  return (
   <BrowserRouter>
